@@ -1,39 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Marco's Website</title>
-        <link rel="stylesheet" href="style.css" />
-        <script src="script.js" defer></script>
-      </head>      
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <!-- jQuery -->
+    <script src="/ts/js/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="/ts/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/ts/css/bootstrap-5.1.0.css" />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="/ts/css/bootstrap-icons-1.8.1/bootstrap-icons-1.8.1.css" />
+
+    <title>Marco Mastrangelo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 48px;
+            color: white;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            width: 90%;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            perspective: 1000px;
+            width: 100%;
+            height: 300px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .flip-card-front {
+            background-color: #ffffffcc;
+        }
+
+        .flip-card-back {
+            background-color: #ffffff;
+            transform: rotateY(180deg);
+            flex-direction: column;
+        }
+
+        .flip-card-back img {
+            max-width: 100%;
+            max-height: 100px;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
 <body>
-    <header>
-        <h1>Welcome to Marco's website</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="home">
-            <h2>Home</h2>
-            <p>3rd year Industrial Engineering student @UofT</p>
-        </section>
-        <section id="about">
-            <h2>About</h2>
-            <p>I don't know what I want to do with the website yet.</p>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Feel free to contact me at: <a href="marco.mastrangelo@mail.utoronto.com">marco.mastrangelo@mail.utoronto.com</a></p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Marco Mastrangelo. All rights reserved.</p>
-    </footer>
+    <h1>Marco Mastrangelo</h1>
+    <div class="card-container">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">Family</div>
+                <div class="flip-card-back">
+                    <div>Close-knit family of 5, always supporting each other.</div>
+                    <img src="https://via.placeholder.com/150?text=Family" alt="Family">
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">Hobbies</div>
+                <div class="flip-card-back">
+                    <div>Golf, cooking, coding, and watching football.</div>
+                    <img src="https://via.placeholder.com/150?text=Hobbies" alt="Hobbies">
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">Education</div>
+                <div class="flip-card-back">
+                    <div>Studying Industrial Engineering at U of T.</div>
+                    <img src="https://via.placeholder.com/150?text=Education" alt="Education">
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">Fun Facts</div>
+                <div class="flip-card-back">
+                    <div>Can cook amazing prosciutto chips. Dual citizen. Loves Renaissance art.</div>
+                    <img src="https://via.placeholder.com/150?text=Fun+Facts" alt="Fun Facts">
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+
