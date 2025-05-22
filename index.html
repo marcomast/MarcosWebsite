@@ -18,11 +18,11 @@
             padding: 0;
             background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            min-height: 100vh;
         }
 
         h1 {
@@ -30,34 +30,34 @@
             font-size: 48px;
             color: white;
             margin-bottom: 40px;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
         .card-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 30px;
-            max-width: 1000px;
+            max-width: 900px;
             width: 90%;
         }
 
         .flip-card {
-            background-color: transparent;
-            perspective: 1000px;
+            perspective: 1200px;
             width: 100%;
-            height: 300px;
+            height: 240px;
+            cursor: pointer;
         }
 
         .flip-card-inner {
             position: relative;
             width: 100%;
             height: 100%;
-            text-align: center;
-            transition: transform 0.6s;
+            transition: transform 0.8s;
             transform-style: preserve-3d;
         }
 
-        .flip-card:hover .flip-card-inner {
+        .flip-card.flipped .flip-card-inner {
             transform: rotateY(180deg);
         }
 
@@ -65,23 +65,24 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
+            font-size: 1.5rem;
+            text-align: center;
             padding: 1rem;
-            font-size: 1.2rem;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
         }
 
         .flip-card-front {
-            background-color: #ffffffcc;
+            font-weight: 600;
         }
 
         .flip-card-back {
-            background-color: #ffffff;
             transform: rotateY(180deg);
             flex-direction: column;
         }
@@ -97,18 +98,19 @@
 
 <body>
     <h1>Marco Mastrangelo</h1>
+
     <div class="card-container">
-        <div class="flip-card">
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
             <div class="flip-card-inner">
                 <div class="flip-card-front">Family</div>
                 <div class="flip-card-back">
-                    <div>Close-knit family of 5, always supporting each other.</div>
+                    <div>Close-knit family of 5, always supportive.</div>
                     <img src="https://via.placeholder.com/150?text=Family" alt="Family">
                 </div>
             </div>
         </div>
 
-        <div class="flip-card">
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
             <div class="flip-card-inner">
                 <div class="flip-card-front">Hobbies</div>
                 <div class="flip-card-back">
@@ -118,21 +120,21 @@
             </div>
         </div>
 
-        <div class="flip-card">
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
             <div class="flip-card-inner">
                 <div class="flip-card-front">Education</div>
                 <div class="flip-card-back">
-                    <div>Studying Industrial Engineering at U of T.</div>
+                    <div>Industrial Engineering at U of T, AI minor.</div>
                     <img src="https://via.placeholder.com/150?text=Education" alt="Education">
                 </div>
             </div>
         </div>
 
-        <div class="flip-card">
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
             <div class="flip-card-inner">
                 <div class="flip-card-front">Fun Facts</div>
                 <div class="flip-card-back">
-                    <div>Can cook amazing prosciutto chips. Dual citizen. Loves Renaissance art.</div>
+                    <div>Can make killer prosciutto chips. Dual citizen. Loves Renaissance art.</div>
                     <img src="https://via.placeholder.com/150?text=Fun+Facts" alt="Fun Facts">
                 </div>
             </div>
