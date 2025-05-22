@@ -21,7 +21,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             min-height: 100vh;
         }
 
@@ -29,9 +28,29 @@
             text-align: center;
             font-size: 48px;
             color: white;
-            margin-bottom: 40px;
+            margin-top: 40px;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .about-me {
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+            max-width: 700px;
+            margin: 20px 20px 30px 20px;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            margin-bottom: 40px;
         }
 
         .card-container {
@@ -40,6 +59,7 @@
             gap: 30px;
             max-width: 900px;
             width: 90%;
+            margin-bottom: 60px;
         }
 
         .flip-card {
@@ -99,12 +119,18 @@
 <body>
     <h1>Marco Mastrangelo</h1>
 
+    <div class="about-me">
+        Write text here
+    </div>
+
+    <img src="https://via.placeholder.com/180" alt="Marco Mastrangelo" class="profile-pic">
+
     <div class="card-container">
         <div class="flip-card" onclick="this.classList.toggle('flipped')">
             <div class="flip-card-inner">
                 <div class="flip-card-front">Family</div>
                 <div class="flip-card-back">
-                    <div>Close-knit family of 5, always supportive.</div>
+                    <div>Write text here</div>
                     <img src="https://via.placeholder.com/150?text=Family" alt="Family">
                 </div>
             </div>
@@ -114,7 +140,7 @@
             <div class="flip-card-inner">
                 <div class="flip-card-front">Hobbies</div>
                 <div class="flip-card-back">
-                    <div>Golf, cooking, coding, and watching football.</div>
+                    <div>Write text here</div>
                     <img src="https://via.placeholder.com/150?text=Hobbies" alt="Hobbies">
                 </div>
             </div>
@@ -124,7 +150,7 @@
             <div class="flip-card-inner">
                 <div class="flip-card-front">Education</div>
                 <div class="flip-card-back">
-                    <div>Industrial Engineering at U of T, AI minor.</div>
+                    <div>Write text here</div>
                     <img src="https://via.placeholder.com/150?text=Education" alt="Education">
                 </div>
             </div>
@@ -134,7 +160,7 @@
             <div class="flip-card-inner">
                 <div class="flip-card-front">Fun Facts</div>
                 <div class="flip-card-back">
-                    <div>Can make killer prosciutto chips. Dual citizen. Loves Renaissance art.</div>
+                    <div>Write text here</div>
                     <img src="https://via.placeholder.com/150?text=Fun+Facts" alt="Fun Facts">
                 </div>
             </div>
